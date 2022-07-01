@@ -13,7 +13,8 @@ class Usuario{
     } 
  
     addMascota() {
-        this.mascotas.push()
+        const newmascota=this.mascotas.push()
+        console.log(newmascota)
     }
  
     countMascotas(){
@@ -21,7 +22,8 @@ class Usuario{
     }
  
     addBook(){
-        this.libros.push({nombre: nombre, autor: autor})
+        const addlibro = this.libros.push({nombre: nombre, autor: autor})
+        console.log(addlibro)
     }
  
     getBookNames(){
