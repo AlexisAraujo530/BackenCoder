@@ -1,11 +1,12 @@
 const fs = require('fs');
 
+
 class Contenedor {
   constructor(fileName){
     this.fileName = fileName;
-    this.objects = this.readData(this.fileName) || [];
+    this.objects =  [];
   }
-
+  
   async generateId() {
     try {
         this.objects = await this.getAll() || [];
@@ -37,6 +38,10 @@ class Contenedor {
     fs.writeFile(this.fileName, JSON.stringify(data), (err) => {
       if (err) throw err;
     });
+  
+    const generateId = this.generateId();
+    objeto.id = generateId;
+    return objeto;
   }
 
  async getById(number){
@@ -89,5 +94,7 @@ writeData(objects) {
 }
 
 }
+
+
 
 module.exports = Contenedor;
