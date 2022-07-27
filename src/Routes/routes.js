@@ -15,7 +15,7 @@ router.get("/:id", (req, res) => {
 });
 
 // add a new product
-router.post("/", (req, res) => {
+router.post("/products", (req, res) => {
   res.send(Actions.add(req.body));
 });
 
