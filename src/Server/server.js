@@ -20,7 +20,7 @@ app.set('views','./views');
 // app.use(express.static('./public'))
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-app.use('/productos', router)
+app.use('./products', router)
 app.get('/', (req, res) => {
   res.render('main');
 })
