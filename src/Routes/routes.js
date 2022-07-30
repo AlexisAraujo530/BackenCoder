@@ -5,7 +5,7 @@ const Actions = require("../Controller/controller");
 
 // return all products
 router.get("/", (req, res) => {
-  res.send(Actions.getAll());
+  res.render("main");
 });
 
 // return a product by id
@@ -16,8 +16,9 @@ router.get("/:id", (req, res) => {
 
 // add a new product
 router.post("/products", (req, res) => {
-  res.send(Actions.add(req.body));
-});
+  const {name, price, description} = req.body;
+  res.send(Actions.addProduct(name, price, description));
+} );
 
 // update a product
 router.put("/:id", (req, res) => {
